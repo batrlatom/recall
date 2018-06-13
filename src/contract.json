@@ -1,0 +1,80 @@
+{
+        "constant": false,
+        "inputs": [{
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "brain",
+                "type": "string"
+            },
+            {
+                "name": "image",
+                "type": "string"
+            },
+            {
+                "name": "preprocess",
+                "type": "string"
+            },
+            {
+                "name": "postprocess",
+                "type": "string"
+            }
+        ],
+        "name": "appendRecall",
+        "outputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [],
+        "name": "getCount",
+        "outputs": [{
+            "name": "count",
+            "type": "uint256"
+        }],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "constant": true,
+        "inputs": [{
+            "name": "index",
+            "type": "uint256"
+        }],
+        "name": "getRecallatIndex",
+        "outputs": [{
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "name": "image",
+                "type": "string"
+            },
+            {
+                "name": "brain",
+                "type": "string"
+            },
+            {
+                "name": "preprocess_code",
+                "type": "string"
+            },
+            {
+                "name": "postprocess_code",
+                "type": "string"
+            }
+        ],
+        "payable": false,
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "payable": false,
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    }
+    
