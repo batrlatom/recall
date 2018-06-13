@@ -1,10 +1,5 @@
 <template>
-  <!--  <RearCameraComponent ref="webcam" :height="320" :width="240" >
-  </RearCameraComponent> -->
-  <div>
   <webcam ref="webcam" style="height:100%; width:100%"/>
-
-</div>
 </template>
 
 

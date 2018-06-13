@@ -33,7 +33,7 @@ import 'quasar-extras/roboto-font'; // Optional
 import 'quasar-extras/material-icons';
 import {
 	routes
-} from './routes.js'
+} from './router/routes.js'
 
 Vue.use(Quasar);
 Vue.use(VueRouter)

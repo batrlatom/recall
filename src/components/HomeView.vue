@@ -3,6 +3,9 @@
     <!--<BrainHub/>-->
     <recallOutput/>
     <SenseHub/>
+    <MarketplaceModal/>
+<SensorsModal/>
+<WishesMarketplace/>
     <RecallButton/>
 
 </div>

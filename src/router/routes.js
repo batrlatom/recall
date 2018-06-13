@@ -1,7 +1,7 @@
-import WelcomeWizard from './components/WelcomeWizard'
-import HomeView from './components/HomeView'
-import SensorsBase from './components/SensorsBase'
-import MarketplaceBase from './components/MarketplaceBase'
+import WelcomeWizard from './../components/WelcomeWizard'
+import HomeView from './../components/HomeView'
+import SensorsBase from './../components/SensorsBase'
+import MarketplaceBase from './../components/MarketplaceBase'
 
 export
 const routes = [

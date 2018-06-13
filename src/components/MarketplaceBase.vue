@@ -1,8 +1,6 @@
 <template>
 <div>
-    <q-layout-header reveal>
         <q-search class="q-pa-sm" v-model="search" color="white" />
-    </q-layout-header>
     <!--  <q-search v-model="search" /> -->
 
     <div>
@@ -29,6 +27,7 @@
 
 <script>
 import CloseButton from './CloseButton'
+import { loadRecalls} from './../decentral/decentral.js'
 
 import {
     QBtn,
@@ -77,6 +76,9 @@ export default {
     },
 
     created: function() {
+
+      loadRecalls("0xc4521fe040288e94901ceb51545a63a1fb7b0de4");
+
     },
     methods: {
         close: function() {

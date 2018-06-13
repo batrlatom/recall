@@ -1,8 +1,8 @@
 {
   "name": "recall",
   "version": "1.0.0",
-  "description": "Recall basic implementation",
-  "author": "",
+  "description": "Recall - basic implementation",
+  "author": "Tomas Batrla",
   "private": true,
   "scripts": {
     "dev": "parcel index.html",
@@ -16,6 +16,7 @@
     "babel-plugin-transform-runtime": "~6.23.0",
     "babel-polyfill": "~6.26.0",
     "babel-preset-env": "~1.6.1",
+    "deep-extend": "^0.6.0",
     "math.js": "^1.1.43",
     "mathjs": "^4.2.2",
     "orbit-db": "^0.19.4",
@@ -27,7 +28,6 @@
     "truffle-contract": "^3.0.5",
     "vue": "^2.5.16",
     "vue-browser-geolocation": "^1.1.1",
-    "vue-carousel-3d": "^0.1.20",
     "vue-hot-reload-api": "^2.3.0",
     "vue-router": "^3.0.1",
     "vue-web-cam": "^1.0.4",
