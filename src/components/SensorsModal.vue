@@ -9,7 +9,7 @@
 
       <q-item-main>
 
-        <q-item-tile title>{{item.name}}</q-item-tile>
+        <q-item-tile title>{{item.name | capitalize}}</q-item-tile>
       </q-item-main>
 
       <q-item-side right>

@@ -1,5 +1,5 @@
 <template>
-<div>
+<div  >
     <!--<BrainHub/>-->
     <recallOutput/>
     <SenseHub/>
@@ -35,6 +35,7 @@ import {
 } from "quasar-framework/dist/quasar.ios.esm";
 
 
+
 export default {
     name: 'HomeView',
 
@@ -43,10 +44,14 @@ export default {
         return {}
     },
     created: function() {
-        console.log("DASDASDASDASD -fd-f-sdf-sdfg-sf-g-asg-sdf")
+        console.log("HOME VIEW")
 
 
     },
+    methods: {
+
+  },
+
 
     components: {
         AppTitle,
@@ -65,7 +70,7 @@ export default {
         QLayoutHeader,
         QLayoutFooter,
         QLayoutDrawer,
-        QPageSticky,
+        QPageSticky
     },
 }
 </script>

@@ -17,7 +17,7 @@
 
 
 
-    <h3><router-link :to="{ name: 'marketplace', params: {} }">Choose Recall</router-link></h3>
+    <h3 v-if="checked"><router-link :to="{ name: 'marketplace', params: {} }">Choose Recall</router-link></h3>
 
 </div>
 </template>
@@ -56,7 +56,7 @@ export default {
                 name: 'camera',
                 icon: 'camera'
             }],
-            checked: true
+            checked: false
         }
     },
 

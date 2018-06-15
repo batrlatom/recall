@@ -23,22 +23,10 @@
 
 <script>
 import {
-    QBtn,
-    QModal,
-    QSearch,
-    QList,
-    QListHeader,
-    QItem,
-    QItemMain,
-    QItemSeparator,
-    QItemSide,
-    QItemTile,
-    QCollapsible,
-    QChip,
+
+
     QCarousel,
-    QCarouselSlide,
-    QCarouselControl,
-    QProgress
+    QCarouselSlide
 
 } from "quasar-framework/dist/quasar.ios.esm";
 
@@ -52,15 +40,15 @@ export default {
             isOpened: true,
             items: [{
                 name: 'Recall',
-                subtitle: 'beneficiary collective AI',
+                subtitle: 'your own magic',
                 color: 'bg-green'
             }, {
-                name: 'Magic in your hands',
-                subtitle: 'Use mobile to detect, sense and predict anything',
+                name: 'AI in your hands',
+                subtitle: 'Use mobile to sense, memorize, learn and predict anything',
                 color: 'bg-green'
             }, {
-                name: 'Make a wish',
-                subtitle: 'Contribute to Recall, benefit yourself and others',
+                name: 'Lets make it happen',
+                subtitle: '',
                 color: 'bg-blue'
             }]
         }
@@ -79,22 +67,9 @@ export default {
         }
     },
     components: {
-        QBtn,
-        QModal,
-        QSearch,
-        QList,
-        QListHeader,
-        QItem,
-        QItemMain,
-        QItemSeparator,
-        QItemSide,
-        QItemTile,
-        QCollapsible,
-        QChip,
+
         QCarousel,
-        QCarouselSlide,
-        QCarouselControl,
-        QProgress
+        QCarouselSlide
     }
 
 }

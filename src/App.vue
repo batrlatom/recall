@@ -56,24 +56,10 @@
 
 
 <script>
-import AppTitle from './components/AppTitle'
-import RecallButton from './components/RecallButton'
-import SenseHub from './components/SenseHub'
-import BrainHub from './components/BrainHub'
-import recallOutput from './components/recallOutput'
-import MarketplaceModal from './components/MarketplaceModal'
-import WishesMarketplace from './components/WishesMarketplace'
-import SensorsModal from './components/SensorsModal'
-import WelcomeWizard from './components/WelcomeWizard'
+
 import {
     QLayout,
-    QPageContainer,
-    QPage,
-    QLayoutHeader,
-    QLayoutFooter,
-    QLayoutDrawer,
-    QPageSticky,
-    QToolbar
+    QPageContainer
 
 
 } from "quasar-framework/dist/quasar.mat.esm";
@@ -82,26 +68,9 @@ import {
 export default {
     name: 'App',
     components: {
-        AppTitle,
-        RecallButton,
-        SenseHub,
-        BrainHub,
-        recallOutput,
-        MarketplaceModal,
-        WishesMarketplace,
-        SensorsModal,
-        WelcomeWizard,
 
         QLayout,
-        QPageContainer,
-        QPage,
-        QLayoutHeader,
-        QLayoutFooter,
-        QLayoutDrawer,
-        QPageSticky,
-        QToolbar
-
-
+        QPageContainer
 
     },
     created: function() {

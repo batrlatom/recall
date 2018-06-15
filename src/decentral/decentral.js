@@ -15,7 +15,7 @@ from './contract.json'
 /*
 Initialize web3 ( ropsten ), recall contract and fetch all recalls.
 */
-export function loadRecalls(address) {
+export async function loadRecalls(address) {
 
 	var Web3 = require("web3");
 	var web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io"));
@@ -114,30 +114,31 @@ export function loadRecalls(address) {
 	//var mktplc = MarketplaceContract.at(address);
 	console.log(mktplc);
 
+	var promise = new Promise(function (resolve, reject) {
 
-	var count = mktplc.methods.getCount().call()
-		.then(function (result) {
-			console.log("result")
-			for (var i = 0; i < result; i++) {
-				var recall = mktplc.methods.getRecallatIndex(i).call().then(function (result) {;
-					console.log(result)
-				})
-			}
-		});
+		var count = mktplc.methods.getCount().call()
+			.then(function (result) {
+				console.log("result")
+				var output = []
+				for (var i = 0; i < result; i++) {
+					var recall = mktplc.methods.getRecallatIndex(i).call().then(function (result) {;
+						//console.log(result)
+						output.push(result)
 
-
-
-	//document.getElementById('marketplace').insertAdjacentHTML('beforeend', "<a class=\"carousel-item center\" href=\"#one!\"  ><h4>" + recall[0] + "</h4><img id=\"" + i + "\" ><button class=\"red btn waves-effect waves-light\" type=\"submit\" name=\"action\">Recall<i class=\"material-icons left\">blur_on</i></button></a>");
-
-	//var img = document.getElementById(i)
-	//loadImage(img, recall[1])
-	//console.log(img)
+					})
+				}
 
 
+				console.log(output)
+				resolve(output)
+			});
 
-	//M.AutoInit();
 
-	//initGraphics();
+		//setTimeout(resolve, 100, 'foo');
+	});
+
+
+	return promise;
 }
 
 
@@ -182,5 +183,70 @@ export function loadIpfsData() {
 
 
 
+	})
+}
+
+
+export async function initDecentralization(store) {
+
+
+	//const makeDB = async(store) => {
+	console.log("asyncer")
+	const IPFS = require('ipfs')
+	const OrbitDB = require('orbit-db')
+
+	// OrbitDB uses Pubsub which is an experimental feature
+	// and need to be turned on manually.
+	// Note that these options need to be passed to IPFS in
+	// all examples in this document even if not specfied so.
+	const ipfsOptions = {
+		EXPERIMENTAL: {
+			pubsub: true
+		},
+	}
+
+	// Create IPFS instance
+	const ipfs = new IPFS(ipfsOptions)
+
+	ipfs.on('ready', async() => {
+		const orbitdb = new OrbitDB(ipfs)
+		const db = await orbitdb.docs('recall')
+
+		var hash = await db.put({
+			_id: 'QmAwesomeIpfsHash',
+			name: '-1 shamb0t',
+			image: 'http://loremflickr.com/320/320/',
+			preProcessor: "return data",
+			postProcessor: "return data",
+			followers: 500
+		})
+
+		hash = await db.put({
+			_id: 'QmAwesomeIpfsHash sda',
+			name: '-dasda1 shamb0t',
+			image: 'http://loremflickr.com/320/320/',
+			preProcessor: "return data",
+			postProcessor: "return data",
+			followers: 1500
+		})
+
+		hash = await db.put({
+			_id: 'QmAwesomeIpfsHash 312',
+			name: 'DASDASFA',
+			image: 'http://loremflickr.com/320/320/',
+			preProcessor: "return data",
+			postProcessor: "return data",
+			followers: 500
+		})
+
+		hash = await db.put({
+			_id: 'QmAwesomeIpfsHashweqw',
+			name: 'QQQQmb0t',
+			image: 'http://loremflickr.com/320/320/',
+			preProcessor: "return data",
+			postProcessor: "return data",
+			followers: 500
+		})
+		store.commit("setDB", db)
 	})
 }

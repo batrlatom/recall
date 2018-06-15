@@ -1,20 +1,36 @@
 <template>
-  <webcam ref="webcam" style="height:100%; width:100%"/>
+  <webcam v-touch-swipe.left="handleSwipe" ref="webcam" facingMode="environment" style="height:100%; width:100%"/>
 </template>
 
 
 <script>
-import webcam from './RearCameraComponent';
-//import webcam from './webcam';
+//import webcam from './RearCameraComponent';
+import webcam from './webcam';
+import {
+TouchSwipe
+} from "quasar-framework/dist/quasar.ios.esm";
+
+
 
 export default {
     name: 'SenseHub',
     data() {
         return {
-            img: null
+            img: null,
+            sensors: []
         };
     },
+    directives: {
+      TouchSwipe
+    },
     methods: {
+      handleSwipe ({ direction, duration, distance, evt }) {
+        //this.info = { direction, duration, distance }
+        // native Javascript event
+        console.log("swipe")
+        console.log(evt)
+      },
+
         photo() {
 
 console.log("making photo :)")

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1 id="out">s</h1>
   <!--<video ref="video" :width="this.width" :height="this.height" :src="this.source" :autoplay="this.autoplay"></video>-->
   <video ref="video"  :autoplay="true" style="width:100%; height:100%"></video>
 
@@ -35,6 +34,10 @@ export default {
         screenshotFormat: {
           type: String,
           default: 'image/jpeg'
+        },
+        facingMode: {
+          type: String,
+          default: 'user'
         }
     },
     /*
@@ -81,7 +84,7 @@ export default {
     var constraints = {
 
 
-          audio: false, video: {facingMode: 'environment'}
+          audio: false, video: {facingMode: this.facingMode}
 
     }
 
@@ -97,7 +100,7 @@ export default {
             //document.getElementById('out').innerHTML = 'mounted';
 
             //this.video.play();
-            document.getElementById('out').innerHTML = 'recording';
+            //document.getElementById('out').innerHTML = 'recording';
 
 
 

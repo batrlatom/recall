@@ -6,6 +6,8 @@
     <div>
         <q-carousel style="min-height:400px !important;" quick-nav view="p" class="text-black text-center">
             <q-carousel-slide class="white" v-for="item in items">
+              {{item.name}}
+                {{ item.image }}
                 <q-card inline class="q-ma-sm">
                     <q-card-media>
                         <img :src=item.image />
@@ -34,7 +36,7 @@ import {
     QCarousel,
     QCarouselSlide,
     QCarouselControl,
-    QModal,
+
     QSearch,
     QCard,
     QCardTitle,
@@ -42,8 +44,7 @@ import {
     QCardMedia,
     QCardSeparator,
     QCardActions,
-    QProgress,
-    QLayoutHeader
+    QProgress
 
 
 
@@ -55,7 +56,8 @@ export default {
 
     data: function() {
         return {
-            search: ""
+            search: "",
+            recalls: []
         }
     },
 
@@ -67,17 +69,36 @@ export default {
                 return false
             }
         },
-        items: function() {
-            if (this.$store.state.database) {
+        items:  function() {
+          /*  if (this.$store.state.database) {
                 var all = this.$store.state.database.query((doc) => doc.followers >= 0)
                 return all;
-            }
+            }*/
+
+            return this.recalls
+            /*
+var recalls =   loadRecalls("0xc4521fe040288e94901ceb51545a63a1fb7b0de4");
+
+
+console.log("-----")
+if (recalls.length > 0){
+  console.log(recalls[0])
+
+}
+
+
+console.log("-----")
+            return  recalls*/
+
         }
     },
 
-    created: function() {
+    created: async function() {
 
-      loadRecalls("0xc4521fe040288e94901ceb51545a63a1fb7b0de4");
+      this.recalls = await loadRecalls("0xc4521fe040288e94901ceb51545a63a1fb7b0de4");
+console.log(this.recalls)
+
+
 
     },
     methods: {
@@ -89,26 +110,22 @@ export default {
         },
         LoadRecall: function() {
             console.log("clicked load recall")
-
-
         }
     },
     components: {
-        QBtn,
-        QCarousel,
-        QCarouselSlide,
-        QCarouselControl,
-        QModal,
-        QSearch,
-        QCard,
-        QCardTitle,
-        QCardMain,
-        QCardMedia,
-        QCardSeparator,
-        QCardActions,
-        CloseButton,
-        QProgress,
-        QLayoutHeader
+      QBtn,
+      QCarousel,
+      QCarouselSlide,
+      QCarouselControl,
+
+      QSearch,
+      QCard,
+      QCardTitle,
+      QCardMain,
+      QCardMedia,
+      QCardSeparator,
+      QCardActions,
+      QProgress
 
     }
 }
