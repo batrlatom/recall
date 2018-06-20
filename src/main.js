@@ -53,13 +53,12 @@ var router = new VueRouter({
 
 Vue.config.productionTip = false
 
-
-//Vue.use(OrbitDB);
 import {
 	initDecentralization
 } from './decentral/decentral.js'
 
 initDecentralization(store);
+
 
 new Vue({
 	store,

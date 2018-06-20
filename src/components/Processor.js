@@ -7,15 +7,23 @@ export default class Processor {
 	 * instance.
 	 *
 	 */
-	constructor(url) {
+	constructor(store, url) {
 		this.url = url;
+		this.store = store;
 	}
 
 	/* Load body of the processor function from the url provided in the constructor
 	 *
 	 */
 	async init() {
+		console.log("processor init")
+
+
+
+
 		try {
+
+			console.log("database:" + this.store.state.database);
 			var xhr = new XMLHttpRequest();
 			var obj = this;
 			xhr.onload =

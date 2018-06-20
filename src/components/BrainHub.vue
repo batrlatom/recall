@@ -105,12 +105,18 @@ console.log("***************")
 
 
         var mobilenet = await obj.loadMobilenet('https://storage.googleapis.com/tfjs-models/tfjs/mobilenet_v1_0.25_224/model.json');
+        await mobilenet.save('indexeddb://demo/management/model1');
+        //await mobilenet.save('downloads://demo/management/model2');
+
+        console.log("xxxxxxxxxxxxxxxxxxx"+JSON.stringify(await tf.io.listModels())+"xxxxxxxxxxxxxxxxxxx");
 
 
-        var preProcess = new preProcessor("http://192.168.8.101:8080/ipfs/Qme5P747rsTZM2LRfqEQCyxgBtLLV3aZXMTxhxzeXKNKNb");
+        console.log("***************")
+
+        var preProcess = new preProcessor(obj.$store, "http://localhost:8080/ipfs/Qme5P747rsTZM2LRfqEQCyxgBtLLV3aZXMTxhxzeXKNKNb");
         await preProcess.init();
 
-        var postProcess = new postProcessor("http://192.168.8.101:8080/ipfs/QmRhS6MYB8g7vsSgM5jzynRGPafkaxaDNRMSnvra14CTrv");
+        var postProcess = new postProcessor(obj.$store, "http://localhost:8080/ipfs/QmVn9DqRyBovdxs3WuyUj3tb3W7k193tC3uQiinjpVu6D5");
         await postProcess.init();
 
         //gets image, create tensor and push it to the network

@@ -1,22 +1,15 @@
-/*import WelcomeWizard from './../components/WelcomeWizard'
+import "babel-polyfill";
 
-const HomeView = () =>
-	import (
-'./../components/HomeView');
-const SensorsBase = () =>
-	import (  './../components/SensorsBase');
-const MarketplaceBase = () =>
-	import ( './../components/WelcomeWizard');
+import WelcomeWizard from './../components/WelcomeWizard';
+import HomeView from './../components/HomeView';
+import SensorsBase from './../components/SensorsBase';
+import MarketplaceBase from './../components/MarketplaceBase';
+import ChatComponent from './../components/ChatComponent';
 
-
-*/
-import HomeView from './../components/HomeView'
-import SensorsBase from './../components/SensorsBase'
-import MarketplaceBase from './../components/MarketplaceBase'
+//const HomeView = () =>
+//	import ( /* webpackChunkName: "app" */ './../components/HomeView.vue');
 
 
-const WelcomeWizard = () =>
-	import ( /* webpackChunkName: "home" */ './../components/WelcomeWizard');
 
 export
 const routes = [
@@ -39,5 +32,10 @@ const routes = [
 		name: 'marketplace',
 		path: '/marketplace',
 		component: MarketplaceBase
+	},
+	{
+		name: 'chat',
+		path: '/chat',
+		component: ChatComponent
 	}
 ]

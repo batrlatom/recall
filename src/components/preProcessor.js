@@ -8,7 +8,7 @@ export default class preProcessor extends Processor {
 	 * instance.
 	 *
 	 */
-	constructor(url) {
-		super(url);
+	constructor(store, url) {
+		super(store, url);
 	}
 }

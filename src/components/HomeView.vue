@@ -1,6 +1,6 @@
 <template>
 <div  >
-    <!--<BrainHub/>-->
+    <BrainHub/>
     <recallOutput/>
     <SenseHub/>
     <MarketplaceModal/>
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+  //const AppTitle: () => import('./AppTitle.vue')
 import AppTitle from './AppTitle'
 import RecallButton from './RecallButton'
 import SenseHub from './SenseHub'
